@@ -168,10 +168,10 @@ public class ScrewtapeInterpreter {
 
       }
       if(instruction == '+') {
-
+        tapePointer.value++;
       }
       if(instruction == '-') {
-
+        tapePointer.value--;
       }
       if(instruction == '.') {
 
@@ -180,7 +180,7 @@ public class ScrewtapeInterpreter {
 
       }
       if(instruction == ']') {
-        
+
       }
 
       instructionPointer++;
