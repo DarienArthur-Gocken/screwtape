@@ -185,7 +185,8 @@ public class ScrewtapeInterpreter {
         tapePointer.value--;
       }
       if(instruction == '.') {
-
+        char o = (char) tapePointer.value;
+        output = output + o;
       }
       if(instruction == '[') {
 
