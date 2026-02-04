@@ -162,10 +162,21 @@ public class ScrewtapeInterpreter {
     while(instructionPointer < instructions.length) {
       char instruction = instructions[instructionPointer];
       if(instruction == '>') {
-
+        if(tapePointer.next == null) {
+          Node newNode = new Node(0);
+          tapePointer.next = newNode;
+          newNode.prev = tapePointer;
+        }
+        tapePointer = tapePointer.next;
       }
       if(instruction == '<') {
-
+        if(tapePointer.prev == null) {
+          Node newNode = new Node(0);
+          newNode.next = tapePointer;
+          tapePointer.prev = newNode;
+          tapeHead = newNode;
+        }
+        tapePointer = tapePointer.prev;
       }
       if(instruction == '+') {
         tapePointer.value++;
