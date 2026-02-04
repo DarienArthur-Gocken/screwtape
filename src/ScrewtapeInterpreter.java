@@ -188,11 +188,10 @@ public class ScrewtapeInterpreter {
         char o = (char) tapePointer.value;
         output = output + o;
       }
-      if(instruction == '[') {
-
-      }
       if(instruction == ']') {
-
+        if(tapePointer.value != 0) {
+          instructionPointer = bracketMap.get(instructionPointer);
+        }
       }
 
       instructionPointer++;
